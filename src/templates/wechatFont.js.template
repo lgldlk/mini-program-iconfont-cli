@@ -7,6 +7,7 @@ const getSystemWidth = (() => {
     return width;
   };
 })();
+
 Component({
   properties: {
     // #names#
@@ -28,14 +29,14 @@ Component({
       value: #size#,
       observer: function (size) {
         this.setData({
-          svgSize: #rpx-1:size / 750 * getSystemWidth():##rpx-0:size:#,
+          svgSize:  #rpx-1:#size# / 750 * getSystemWidth():##rpx-0:#size#:#,    
         });
       },
     },
   },
   data: {
     colors: '',
-   svgSize: #rpx-1:#size# / 750 * getSystemWidth():##rpx-0:#size#:#,    
+    svgSize:  #rpx-1:#size# / 750 * getSystemWidth():##rpx-0:#size#:#,    
     quot: '"',
     isStr: true,
   },
@@ -56,7 +57,6 @@ Component({
       let rgb = [];
 
       hex = hex.substr(1);
-
       if (hex.length === 3) {
         hex = hex.replace(/(.)/g, '$1$1');
       }
